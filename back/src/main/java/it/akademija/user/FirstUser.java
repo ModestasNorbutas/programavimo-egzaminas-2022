@@ -37,12 +37,8 @@ public class FirstUser {
 			UserDTO secondUser = new UserDTO("USER", "skaitytojas", "skaitytojas", "12345678987", "Address 1", "+37061398876",
 				"skaitytojas", "skaitytojas", "skaitytojas");
 
-//			UserDTO firstManager = new UserDTO("MANAGER", "manager", "manager", "manager",
-//					"manager", "manager");
-
 			userService.createUser(firstAdmin);
 			userService.createUser(firstUser);
-//			userService.createUser(firstManager);
 			userService.createUser(secondUser);
 
 		}
