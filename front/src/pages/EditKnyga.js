@@ -165,7 +165,7 @@ export default function EditKnyga() {
               value={kategorijaId}
               onChange={(e) => setKategorijaId(e.target.value)}
             >
-              <option value="" disabled selected>
+              <option value="" disabled>
                 Pasirinkite kategoriją
               </option>
               {kategorijos.map((kategorija) => (
