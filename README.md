@@ -9,7 +9,7 @@ Administratorius:
 - Naudotojo vardas: admin
 - Slaptažodis: admin
 
-Naudotojas:
+Skaitytojas:
 
 - Naudotojo vardas: user
 - Slaptažodis: user

@@ -7,8 +7,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -37,8 +35,6 @@ import it.akademija.user.UserDAO;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
-	private static final Logger LOG = LoggerFactory.getLogger(SecurityConfig.class);
 
 	@Autowired
 	private SecurityEntryPoint securityEntryPoint;
@@ -94,8 +90,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 						Object[] roles = user.getAuthorities().toArray();
 						String role = roles[0].toString().substring(5);
 
-						LOG.info("Naudotojas [{}] prisijunge prie sistemos", username);
-
 						response.setHeader("Access-Control-Allow-Credentials", "true");
 						response.setHeader("Access-Control-Allow-Origin", request.getHeader("Origin"));
 						response.setHeader("Content-Type", "application/json;charset=UTF-8");
@@ -112,8 +106,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 							AuthenticationException exception) throws IOException, ServletException {
 						String username = request.getParameter("username");
 
-						LOG.info("Nesėkmingas prisijungimas prie sistemos. Naudotojo vardas: {}", username);
-
 						response.sendError(401, "Neteisingas prisijungimo vardas ir/arba slaptažodis");
 					}
 				}).loginPage("/login").permitAll()
@@ -128,9 +120,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 						String username = authentication.getName();
 						Long userID = userDao.findByUsername(username).getUserId();
-
-						LOG.info("** SecurityConfig: Naudotojas {} ID: {} atsijunge nuo sistemos **", username, userID);
-
 					}
 				})
 
