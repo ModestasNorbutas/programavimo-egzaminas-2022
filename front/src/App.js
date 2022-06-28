@@ -14,6 +14,8 @@ import UserKategorijos from "./pages/UserKategorijos";
 import AdminKnygos from "./pages/AdminKnygos";
 import EditKnyga from "./pages/EditKnyga";
 import UserKnygos from "./pages/UserKnygos";
+import UserFavorites from "./pages/UserFavorites";
+import UserRezervuota from "./pages/UserRezervuota";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -64,6 +66,8 @@ export default function App() {
             <>
               <Route path="/home" element={<UserKategorijos />} />
               <Route path="/knygos" element={<UserKnygos />} />
+              <Route path="/favorites" element={<UserFavorites />} />
+              <Route path="/rezervuota" element={<UserRezervuota />} />
             </>
           )}
           <Route path="*" element={<Navigate replace to="/home" />} />

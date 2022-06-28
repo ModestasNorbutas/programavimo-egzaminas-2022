@@ -9,6 +9,7 @@ export default function Navigation() {
   const linksRef = useRef();
   const role = useSelector((state) => state.auth.role);
   const admin = role === "ADMIN";
+  const user = role === "USER";
 
   const collapseNavigation = () => {
     navButtonRef.current.classList.add("collapsed");
@@ -80,6 +81,31 @@ export default function Navigation() {
                     onClick={collapseNavigation}
                   >
                     Pridėti knygą
+                  </NavLink>
+                </li>
+              </>
+            )}
+            {user && (
+              <>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link"
+                    aria-current="page"
+                    to="/favorites"
+                    onClick={collapseNavigation}
+                  >
+                    Mėgstamos knygos
+                  </NavLink>
+                </li>
+
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link"
+                    aria-current="page"
+                    to="/rezervuota"
+                    onClick={collapseNavigation}
+                  >
+                    Rezervuotos knygos
                   </NavLink>
                 </li>
               </>
