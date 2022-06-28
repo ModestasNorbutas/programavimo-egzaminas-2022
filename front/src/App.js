@@ -11,6 +11,9 @@ import Login from "./pages/Login";
 import AdminKategorijos from "./pages/AdminKategorijos";
 import EditKategorija from "./pages/EditKategorija";
 import UserKategorijos from "./pages/UserKategorijos";
+import AdminKnygos from "./pages/AdminKnygos";
+import EditKnyga from "./pages/EditKnyga";
+import UserKnygos from "./pages/UserKnygos";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -52,31 +55,15 @@ export default function App() {
           {admin && (
             <>
               <Route path="/home" element={<AdminKategorijos />} />
-
+              <Route path="/knygos" element={<AdminKnygos />} />
               <Route path="/kategorija/:id" element={<EditKategorija />} />
-              {/* <Route
-                path="/patiekalai/:istaigaID"
-                element={<PatiekalaiList />}
-              />
-              <Route
-                path="/maitinimoistaiga/:id"
-                element={<EditMaitinimoIstaiga />}
-              />
-              <Route
-                path="/patiekalas/:istaigaID/:id"
-                element={<EditPatiekalas />}
-              /> */}
+              <Route path="/knyga/:id" element={<EditKnyga />} />
             </>
           )}
           {user && (
             <>
               <Route path="/home" element={<UserKategorijos />} />
-
-              {/* <Route
-                path="/patiekalai/:istaigaID"
-                element={<PatiekalaiListUser />}
-              />
-              <Route path="/cart" element={<UserCart />} /> */}
+              <Route path="/knygos" element={<UserKnygos />} />
             </>
           )}
           <Route path="*" element={<Navigate replace to="/home" />} />

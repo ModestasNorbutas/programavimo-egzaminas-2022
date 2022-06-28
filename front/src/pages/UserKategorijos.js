@@ -1,5 +1,4 @@
 import Container from "../components/UI/Container";
-import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { kategorijosActions } from "../store/kategorijos-slice";
@@ -10,7 +9,6 @@ import Loading from "../components/UI/Loading";
 import Navigation from "../components/UI/Navigation";
 
 export default function UserKategorijos() {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [kategorijos, setKategorijos] = useState();
 
@@ -30,7 +28,7 @@ export default function UserKategorijos() {
   }, [dispatch]);
 
   const handleBrowse = (kategorijosID) => {
-    navigate("/knygos/" + kategorijosID);
+    alert("funkcija dar neįdiegta");
   };
 
   return (

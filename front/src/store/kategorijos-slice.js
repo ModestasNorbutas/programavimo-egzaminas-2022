@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+const initialState = JSON.parse(localStorage.getItem("kategorijos")) || {
   kategorijos: [],
 };
 
@@ -10,6 +10,7 @@ const kategorijosSlice = createSlice({
   reducers: {
     add(state, action) {
       state.kategorijos = action.payload;
+      localStorage.setItem("kategorijos", JSON.stringify(state));
     },
   },
 });

@@ -8,9 +8,7 @@ export default function Navigation() {
   const navButtonRef = useRef();
   const linksRef = useRef();
   const role = useSelector((state) => state.auth.role);
-  const count = useSelector((state) => state.cart.count);
   const admin = role === "ADMIN";
-  const user = role === "USER";
 
   const collapseNavigation = () => {
     navButtonRef.current.classList.add("collapsed");
@@ -51,6 +49,16 @@ export default function Navigation() {
                 Kategorijos
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                className="nav-link"
+                aria-current="page"
+                to="/knygos"
+                onClick={collapseNavigation}
+              >
+                Knygos
+              </NavLink>
+            </li>
             {admin && (
               <>
                 <li className="nav-item">
@@ -63,16 +71,7 @@ export default function Navigation() {
                     Pridėti kategoriją
                   </NavLink>
                 </li>
-                <li className="nav-item">
-                  <NavLink
-                    className="nav-link"
-                    aria-current="page"
-                    to="/knygos"
-                    onClick={collapseNavigation}
-                  >
-                    Knygos
-                  </NavLink>
-                </li>
+
                 <li className="nav-item">
                   <NavLink
                     className="nav-link"
@@ -85,18 +84,6 @@ export default function Navigation() {
                 </li>
               </>
             )}
-            {/* {user && (
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link"
-                  aria-current="page"
-                  to="/cart"
-                  onClick={collapseNavigation}
-                >
-                  Pirkinių krepšelis ({count})
-                </NavLink>
-              </li>
-            )} */}
           </ul>
           <Logout />
         </div>
