@@ -14,6 +14,8 @@ import EditPatiekalas from "./pages/EditPatiekalas";
 import PatiekalaiList from "./pages/PatiekalaiList";
 import PatiekalaiListUser from "./pages/PatiekalaiListUser";
 import UserCart from "./pages/UserCart";
+import AdminKategorijos from "./pages/AdminKategorijos";
+import EditKategorija from "./pages/EditKategorija";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -52,9 +54,11 @@ export default function App() {
     return (
       <Suspense fallback={<Loading />}>
         <Routes>
-          <Route path="/home" element={<Home />} />
           {admin && (
             <>
+              <Route path="/home" element={<AdminKategorijos />} />
+
+              <Route path="/kategorija/:id" element={<EditKategorija />} />
               <Route
                 path="/patiekalai/:istaigaID"
                 element={<PatiekalaiList />}
@@ -71,6 +75,8 @@ export default function App() {
           )}
           {user && (
             <>
+              <Route path="/home" element={<Home />} />
+
               <Route
                 path="/patiekalai/:istaigaID"
                 element={<PatiekalaiListUser />}

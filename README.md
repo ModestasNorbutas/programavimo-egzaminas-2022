@@ -9,10 +9,13 @@ Administratorius:
 - Naudotojo vardas: admin
 - Slaptažodis: admin
 
-Skaitytojas:
+Skaitytojai:
 
 - Naudotojo vardas: user
 - Slaptažodis: user
+
+- Naudotojo vardas: skaitytojas
+- Slaptažodis: skaitytojas
 
 ## Pradėti
 

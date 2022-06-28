@@ -48,7 +48,7 @@ export default function Navigation() {
                 to="/home"
                 onClick={collapseNavigation}
               >
-                Maitinimo įstaigos
+                Kategorijos
               </NavLink>
             </li>
             {admin && (
@@ -56,10 +56,10 @@ export default function Navigation() {
                 <NavLink
                   className="nav-link"
                   aria-current="page"
-                  to="/maitinimoistaiga/new"
+                  to="/kategorija/new"
                   onClick={collapseNavigation}
                 >
-                  Pridėti Maitinimo Įstaigą
+                  Pridėti kategoriją
                 </NavLink>
               </li>
             )}
