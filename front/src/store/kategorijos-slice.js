@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  kategorijos: {},
+  kategorijos: [],
 };
 
 const kategorijosSlice = createSlice({
@@ -9,9 +9,7 @@ const kategorijosSlice = createSlice({
   initialState: initialState,
   reducers: {
     add(state, action) {
-      action.payload.forEach((item) => {
-        state.kategorijos[item.id] = item.pavadinimas;
-      });
+      state.kategorijos = action.payload;
     },
   },
 });

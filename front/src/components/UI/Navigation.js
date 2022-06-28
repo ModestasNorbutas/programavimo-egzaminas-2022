@@ -52,18 +52,40 @@ export default function Navigation() {
               </NavLink>
             </li>
             {admin && (
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link"
-                  aria-current="page"
-                  to="/kategorija/new"
-                  onClick={collapseNavigation}
-                >
-                  Pridėti kategoriją
-                </NavLink>
-              </li>
+              <>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link"
+                    aria-current="page"
+                    to="/kategorija/new"
+                    onClick={collapseNavigation}
+                  >
+                    Pridėti kategoriją
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link"
+                    aria-current="page"
+                    to="/knygos"
+                    onClick={collapseNavigation}
+                  >
+                    Knygos
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link"
+                    aria-current="page"
+                    to="/knyga/new"
+                    onClick={collapseNavigation}
+                  >
+                    Pridėti knygą
+                  </NavLink>
+                </li>
+              </>
             )}
-            {user && (
+            {/* {user && (
               <li className="nav-item">
                 <NavLink
                   className="nav-link"
@@ -74,7 +96,7 @@ export default function Navigation() {
                   Pirkinių krepšelis ({count})
                 </NavLink>
               </li>
-            )}
+            )} */}
           </ul>
           <Logout />
         </div>

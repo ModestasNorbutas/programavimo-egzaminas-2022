@@ -8,14 +8,9 @@ import swal from "sweetalert";
 import apiEndpoint from "./components/Services/apiEndpoint";
 import Loading from "./components/UI/Loading";
 import Login from "./pages/Login";
-import Home from "./pages/Home";
-import EditMaitinimoIstaiga from "./pages/EditMaitinimoIstaiga";
-import EditPatiekalas from "./pages/EditPatiekalas";
-import PatiekalaiList from "./pages/PatiekalaiList";
-import PatiekalaiListUser from "./pages/PatiekalaiListUser";
-import UserCart from "./pages/UserCart";
 import AdminKategorijos from "./pages/AdminKategorijos";
 import EditKategorija from "./pages/EditKategorija";
+import UserKategorijos from "./pages/UserKategorijos";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -59,7 +54,7 @@ export default function App() {
               <Route path="/home" element={<AdminKategorijos />} />
 
               <Route path="/kategorija/:id" element={<EditKategorija />} />
-              <Route
+              {/* <Route
                 path="/patiekalai/:istaigaID"
                 element={<PatiekalaiList />}
               />
@@ -70,18 +65,18 @@ export default function App() {
               <Route
                 path="/patiekalas/:istaigaID/:id"
                 element={<EditPatiekalas />}
-              />
+              /> */}
             </>
           )}
           {user && (
             <>
-              <Route path="/home" element={<Home />} />
+              <Route path="/home" element={<UserKategorijos />} />
 
-              <Route
+              {/* <Route
                 path="/patiekalai/:istaigaID"
                 element={<PatiekalaiListUser />}
               />
-              <Route path="/cart" element={<UserCart />} />
+              <Route path="/cart" element={<UserCart />} /> */}
             </>
           )}
           <Route path="*" element={<Navigate replace to="/home" />} />

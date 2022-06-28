@@ -56,6 +56,17 @@ public class Knyga {
 	this.user = user;
 	this.sarasai = sarasai;
     }
+    
+    public Knyga(String pavadinimas, String santrauka, String isbn,
+	    byte[] nuotrauka, Long puslapiai, Kategorija kategorija) {
+	super();
+	this.pavadinimas = pavadinimas;
+	this.santrauka = santrauka;
+	this.isbn = isbn;
+	this.nuotrauka = nuotrauka;
+	this.puslapiai = puslapiai;
+	this.kategorija = kategorija;
+    }
 
     public Long getId() {
 	return id;
